@@ -190,10 +190,6 @@ class RenderModeRow extends RenderBox
     return Size(constraints.maxWidth, height);
   }
 
-  double getCenterX(RenderBox child) {
-    return (size.height - child.size.height) / 2;
-  }
-
   double _getCenterY(RenderBox child) {
     return (size.height - child.size.height) / 2;
   }
