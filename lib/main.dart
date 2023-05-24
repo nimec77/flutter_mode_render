@@ -51,7 +51,7 @@ class _MainAppState extends State<MainApp> with SingleTickerProviderStateMixin {
         body: Container(
           color: Colors.blueGrey,
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 50),
+            padding: const EdgeInsets.symmetric(horizontal: 150),
             child: Center(
               child: AbsorbPointer(
                 absorbing: _animationController.isAnimating,
