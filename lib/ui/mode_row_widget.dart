@@ -148,7 +148,23 @@ class RenderModeRow extends RenderBox
 
   @override
   void paint(PaintingContext context, Offset offset) {
-    defaultPaint(context, offset);
+    var child = firstChild;
+    final clipRect = Offset.zero & size;
+    while (child != null) {
+      final childParentData = child.parentData as FlexParentData;
+      context.pushClipRect(
+        needsCompositing,
+        offset,
+        clipRect,
+        (context, offset) {
+          if (child == null) {
+            return;
+          }
+          context.paintChild(child, childParentData.offset + offset);
+        },
+      );
+      child = childParentData.nextSibling;
+    }
   }
 
   @override

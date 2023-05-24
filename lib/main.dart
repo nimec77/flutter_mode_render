@@ -51,7 +51,7 @@ class _MainAppState extends State<MainApp> with SingleTickerProviderStateMixin {
         body: Container(
           color: Colors.blueGrey,
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 50),
             child: Center(
               child: AbsorbPointer(
                 absorbing: _animationController.isAnimating,
@@ -60,7 +60,8 @@ class _MainAppState extends State<MainApp> with SingleTickerProviderStateMixin {
                     setState(() => _horizontalDrag += details.delta.dx);
                   },
                   child: ModeRowWidget(
-                    selectedIndex: _animation?.value ?? _selectedIndex.toDouble(),
+                    selectedIndex:
+                        _animation?.value ?? _selectedIndex.toDouble(),
                     isAnimating: _animationController.isAnimating,
                     horizontalDrag: _horizontalDrag,
                     onIndexChanged: _onIndexChange,
